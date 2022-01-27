@@ -2,20 +2,15 @@ version: 0.2
 phases:
  build:
   commands:
-   - echo enter the build phase
-   - mvn clean package
+   - echo "This is build phase"
+   - zip -r deployment_package.zip lambda_function.java
+   #- mvn clean package
 post_build:
  commands:
-   - echo build completed successfully
+   - echo "Deploying to the Lambda"
+   - aws lambda update-function-code --function-name lambda1 --zip-file fileb://deployment_package.zip
+   - zip -r deployment_package.zip lambda_function.java 
 artifacts:
- files:
-  - target/lambda1.jar
-discard-paths: yes
-steps:
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-region: ${{ secrets.AWS_REGION }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      
+type: zip
+paths: 
+- "*"
