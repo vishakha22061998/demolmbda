@@ -5,7 +5,7 @@ phases:
       java: corretto8
   build:
     commands:
-    - echo "Build started"`
+    - echo "Build started"
   post_build:
     commands:
     - echo "Build completed"
