@@ -3,14 +3,13 @@ phases:
  build:
   commands:
    - echo "This is build phase"
-   zip -r deployment_package.zip . -i lambda_function.java
+   - zip -r deployment_package.zip . -i lambda_function.java
    #- mvn clean package
 post_build:
  commands:
    - echo "Deploying to the Lambda"
    - aws lambda update-function-code --function-name lambda1 --zip-file fileb://deployment_package.zip
-   - zip -r deployment_package.zip lambda_function.java 
-artifacts:
+  artifacts:
    type: zip
    paths: 
        - "*"
