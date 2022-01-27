@@ -9,7 +9,7 @@ public class LambdaDemo1 implements RequestHandler<Object,String>
 	public String handleRequest(Object input, Context context) {
 		context.getLogger().log("Input:" + input);
 		//System.out.println("Hello World!");
-		return "Hello from Lambda!.......";
+		return "Hello from Lambda!............";
 	}
 
 	}
