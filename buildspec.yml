@@ -3,9 +3,6 @@ phases:
   install:
     runtime-versions:
       java: corretto8
-  pre_build:
-    commands:
-    - echo "In the pre_build phase..."
   build:
     commands:
     - echo "Build started"`
