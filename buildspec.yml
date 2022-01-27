@@ -3,7 +3,7 @@ phases:
  build:
   commands:
    - echo "This is build phase"
-   - zip -r deployment_package.zip lambda_function.java
+   zip -r deployment_package.zip . -i lambda_function.java
    #- mvn clean package
 post_build:
  commands:
