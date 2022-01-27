@@ -11,6 +11,6 @@ post_build:
    - aws lambda update-function-code --function-name lambda1 --zip-file fileb://deployment_package.zip
    - zip -r deployment_package.zip lambda_function.java 
 artifacts:
-type: zip
-paths: 
-- "*"
+   type: zip
+   paths: 
+       - "*"
