@@ -1,15 +1,20 @@
 version: 0.2
 phases:
- build:
-  commands:
-   - echo "This is build phase"
-   - zip -r deployment_package.zip . -i lambda_function.java
-   #- mvn clean package
-post_build:
- commands:
-   - echo "Deploying to the Lambda"
-   - aws lambda update-function-code  --function-name lambda1  --zip-file fileb://deployment_package.zip
-  artifacts:
-   type: zip
-   paths: 
-       - "*"
+  install:
+    runtime-versions:
+      java: corretto8
+  pre_build:
+    commands:
+    - echo "In the pre_build phase..."
+  build:
+    commands:
+    - echo "Build started"`
+  post_build:
+    commands:
+    - echo "Build completed"
+    - mvn package
+    - mv target/lambda1-0.0.1-SNAPSHOT.jar lambda1-0.0.1-SNAPSHOT.jar
+artifacts:
+  files:
+  -lambda1-0.0.1-SNAPSHOT.jar
+  - .ebextensions/**/*
