@@ -27,6 +27,5 @@ artifacts:
   #discard-paths: yes
    files:
     - lambda1-0.0.1-SNAPSHOT.jar
-    - Vishakha/*
- 
+    - .ebextensions/**/* 
   
