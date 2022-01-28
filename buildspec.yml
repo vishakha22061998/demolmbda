@@ -33,7 +33,7 @@ service:
   build:
     commands:
     - echo "Build started"
-    - mnv install
+    - mvn install
     
   finally:
       - echo always runs even if th install command fails  
