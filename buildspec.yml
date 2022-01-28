@@ -5,7 +5,7 @@ phases:
       java: corretto8
     commands:
       - echo Entered the install phase..
-      - apt-get update -y
+     # - apt-get update -y
       - apt-get update -y maven
     finally:
       - echo always runs even if the update or install command fails  
