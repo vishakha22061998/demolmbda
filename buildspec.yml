@@ -24,9 +24,9 @@ service:
     - mvn package
     - mv target/lambda1-0.0.1-SNAPSHOT.jar lambda1-0.0.1-SNAPSHOT.jar
 artifacts:
-  discard-paths: yes
+  #discard-paths: yes
    files:
     - lambda1-0.0.1-SNAPSHOT.jar
-    #- .ebextensions/**/*
+    -Vishakha/*
  
   
