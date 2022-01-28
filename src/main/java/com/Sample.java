@@ -9,7 +9,7 @@ public class Sample implements RequestHandler<Object,String>
 	public String handleRequest(Object input, Context context) {
 		context.getLogger().log("Input:" + input);
 		//System.out.println("Hello World!");
-		return "Hello World!............";
+		return "Wwlcome!............";
 	}
 
 	}
