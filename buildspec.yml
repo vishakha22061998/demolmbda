@@ -12,7 +12,7 @@ service:
   
  functions:
   LambdaDemo1:
-    handler: src/LambdaDemo1.handler
+    handler: LambdaDemo1.handler
     
       
   build:
