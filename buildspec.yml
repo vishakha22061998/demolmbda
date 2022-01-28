@@ -3,6 +3,18 @@ phases:
   install:
     runtime-versions:
       java: corretto8
+service:
+ provider:
+  name: aws
+  runtime: Java 8 on Amazon Linux 1
+  region: ap-south-1
+  
+  
+ functions:
+  LambdaDemo1:
+    handler: src/LambdaDemo1.handler
+    
+      
   build:
     commands:
     - echo "Build started"
