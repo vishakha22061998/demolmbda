@@ -19,8 +19,7 @@ phases:
     commands:
     - echo "Build started"
     - mvn install
-    
-  finally:
+    finally:
       - echo always runs even if th install command fails  
   post_build:
     commands:
