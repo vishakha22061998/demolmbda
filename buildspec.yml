@@ -25,8 +25,8 @@ phases:
     commands:
     - echo "Build completed"
     - mvn package
-    - mv target/LambdaDemo1-0.0.1-SNAPSHOT.jar LambdaDemo1-0.0.1-SNAPSHOT.jar
-    - mv target/Sample-0.0.1-SNAPSHOT.jar Sample-0.0.1-SNAPSHOT.jar
+    - target/LambdaDemo1-0.0.1-SNAPSHOT.jar LambdaDemo1-0.0.1-SNAPSHOT.jar
+    - target/Sample-0.0.1-SNAPSHOT.jar Sample-0.0.1-SNAPSHOT.jar
    
 artifacts:
   artifact1:
